@@ -1,0 +1,14 @@
+
+#ifndef MCPSP_PLATFORM_PNG_LOADER_H
+#define MCPSP_PLATFORM_PNG_LOADER_H
+
+struct PngReader;
+
+extern char g_pngLastError[64];
+
+PngReader* pngOpen(const char* path, int* outW, int* outH);
+
+bool pngReadRow(PngReader* r, unsigned char* rgbaRow);
+void pngClose(PngReader* r);
+
+#endif
